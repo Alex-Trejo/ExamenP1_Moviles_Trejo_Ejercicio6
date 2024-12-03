@@ -13,21 +13,28 @@ class _PantallaIntervaloState extends State<PantallaIntervalo> {
   String mensajeError = '';
 
   void calcularIntervalo() {
-    final num1 = int.tryParse(controladorNum1.text);
-    final num2 = int.tryParse(controladorNum2.text);
+  final num1 = int.tryParse(controladorNum1.text);
+  final num2 = int.tryParse(controladorNum2.text);
 
-    if (num1 != null && num2 != null) {
+  if (num1 != null && num2 != null) {
+    if (num1 == num2) {
+      setState(() {
+        numeros = []; // Limpia la lista de números.
+        mensajeError = 'Ambos números son iguales. Por favor, ingrese números diferentes.';
+      });
+    } else {
       setState(() {
         numeros = obtenerNumerosEnIntervalo(num1, num2);
         mensajeError = ''; // Limpia el mensaje de error si la operación es válida.
       });
-    } else {
-      setState(() {
-        numeros = []; // Limpia la lista de números.
-        mensajeError = 'Por favor, ingrese números válidos';
-      });
     }
+  } else {
+    setState(() {
+      numeros = []; // Limpia la lista de números.
+      mensajeError = 'Por favor, ingrese números válidos.';
+    });
   }
+}
 
   @override
   Widget build(BuildContext context) {
