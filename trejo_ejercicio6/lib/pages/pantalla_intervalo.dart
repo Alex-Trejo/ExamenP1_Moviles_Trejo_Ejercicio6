@@ -19,18 +19,18 @@ class _PantallaIntervaloState extends State<PantallaIntervalo> {
   if (num1 != null && num2 != null) {
     if (num1 == num2) {
       setState(() {
-        numeros = []; // Limpia la lista de números.
+        numeros = []; 
         mensajeError = 'Ambos números son iguales. Por favor, ingrese números diferentes.';
       });
     } else {
       setState(() {
         numeros = obtenerNumerosEnIntervalo(num1, num2);
-        mensajeError = ''; // Limpia el mensaje de error si la operación es válida.
+        mensajeError = ''; 
       });
     }
   } else {
     setState(() {
-      numeros = []; // Limpia la lista de números.
+      numeros = []; 
       mensajeError = 'Por favor, ingrese números válidos.';
     });
   }
@@ -137,7 +137,7 @@ class _PantallaIntervaloState extends State<PantallaIntervalo> {
                   ),
                 ),
                 onPressed: () {
-                  // Regresa a la pantalla principal
+                  
                   Navigator.pop(context);
                 },
                 child: Text(
@@ -153,7 +153,7 @@ class _PantallaIntervaloState extends State<PantallaIntervalo> {
           ],
         ),
       ),
-      backgroundColor: Colors.black, // Fondo oscuro para consistencia con el diseño.
+      backgroundColor: Colors.black,
     );
   }
 }

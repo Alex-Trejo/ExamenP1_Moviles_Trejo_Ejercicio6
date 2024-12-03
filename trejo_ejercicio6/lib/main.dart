@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navegar a la pantalla de intervalo
+                
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PantallaIntervalo()),
